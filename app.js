@@ -49,3 +49,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// "start": "node ./bin/www",

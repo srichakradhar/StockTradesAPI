@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prestart": "npm install",
     "start": "node ./bin/www",
     "pretest": "npm install",
     "test": "./node_modules/.bin/mocha test"
@@ -27,5 +26,8 @@
     "serve-favicon": "~2.4.2",
     "sqlite3": "^3.1.9",
     "bluebird": "^3.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
   }
 }
