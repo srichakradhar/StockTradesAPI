@@ -1,13 +1,21 @@
 In this challenge, you are required to build a REST API service using Node.js express.js framework to manipulate the Stock data for trades. Each trade is a JSON entry with the following keys:
 
 _id_: This is the trade unique ID.
+
 _type_: This is the trade type, buy or sell.
+
 _user_: The user responsible for the trade. The user itself is a JSON entry consisting of following fields:
+
 _id_: This is the user unique ID.
+
 _name_: This is the user name.
+
 _stock_symbol_: This is the stock symbol.
+
 _stock_quantity_: This is the total number of stocks traded. The traded stock quantity is between 10 and 30 inclusive.
+
 _stock_price_: This is the stock price for one stock (upto two places of decimal) at the time of the trade. The stock price is between 130.42 and 195.65inclusive.
+
 _trade_timestamp_: This is the timestamp for the trade creation given in the format yyyy-MM-dd HH:mm:ss. The timezone is EST (UTC -4).
 
 For example, consider the following event JSON:
