@@ -20,7 +20,8 @@ _trade_timestamp_: This is the timestamp for the trade creation given in the for
 
 For example, consider the following event JSON:
 
-```Trade JSON
+```
+Trade JSON
 {
   "id":1000344,
   "type":"buy",
@@ -55,7 +56,8 @@ The REST service should implement the following functionalities:
 *lowest_price*: This field describes the value of lowest price for the request stock symbol in the given date range.
 
 If there are no trades for the requested stock symbol, then the response JSON should be:
-```{
+```
+{
   "message":"There are no trades in the given date range"
 }
 ```
@@ -79,9 +81,10 @@ You should complete the given project so that it passes all the test cases when 
 
 Consider the following requests performed in the given order:
 
-POST Requests `/trades`
+**POST Requests** `/trades`
 Consider the following POST requests (these are performed in the ascending order of trade id):
-```{
+```
+{
   "id":1000344,
   "type":"buy",
   "user":{
@@ -150,9 +153,10 @@ Consider the following POST requests (these are performed in the ascending order
 }
 ```
 
-GET Request `/trades/users/1619820`
+**GET Request** `/trades/users/1619820`
 The response of the GET request is the following JSON array with the HTTP response code 200:
-```[
+```
+[
   {
     "id":1000344,
     "type":"buy",
@@ -180,11 +184,13 @@ The response of the GET request is the following JSON array with the HTTP respon
 ]
 ```
 
-GET Request `/trades/users/2919559`
+**GET Request** `/trades/users/2919559`
 As the requested user does not exist, so the HTTP response code is 404.
-GET Request /stocks/AC/trades?type=buy&start=2014-06-14&end=2014-06-26
+
+**GET Request** /stocks/AC/trades?type=buy&start=2014-06-14&end=2014-06-26
 The response of the GET request is the following JSON array with the HTTP response code 200:
-```[
+```
+[
   {
     "id":1000344,
     "type":"buy",
@@ -212,29 +218,31 @@ The response of the GET request is the following JSON array with the HTTP respon
 ]
 ```
 
-GET Request `/stocks/AC/trades?type=sell&start=2014-06-27&end=2014-06-27`
+**GET Request** `/stocks/AC/trades?type=sell&start=2014-06-27&end=2014-06-27`
 As there are no trades for the stock in the given date range, so the response is an empty JSON array with the HTTP response code 200.
 GET Request /stocks/ACC/price?start=2014-06-25&end=2014-06-26
 The response of the GET request is the following JSON with the HTTP response code 200:
-```{
+```
+{
   "symbol":"ACC",
   "highest_price":146.09,
   "lowest_price":146.09
 }
 ```
 
-GET Request `/stocks/ACC/price?start=2014-06-26&end=2014-06-26`
+**GET Request** `/stocks/ACC/price?start=2014-06-26&end=2014-06-26`
 The response of the GET request is the following JSON with the HTTP response code 200:
-```{
+```
+{
   "message":"There are no trades in the given date range"
 }
 ```
 
-GET Request `/stocks/A/price?start=2014-06-26&end=2014-06-26`
+**GET Request** `/stocks/A/price?start=2014-06-26&end=2014-06-26`
 As the requested stock symbol does not exist, so the HTTP response code is 404.
 
-DELETE Request `/erase`
+**DELETE Request** `/erase`
 All the stock trades data is erased from the database.
 
-GET Request `/trades`
+**GET Request** `/trades`
 The response is an empty JSON array with the HTTP response code 200.
